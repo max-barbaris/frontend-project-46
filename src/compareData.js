@@ -9,21 +9,21 @@ const compareData = (data1, data2) => {
   const distinctions = sortedKeys.reduce((acc, key) => {
     if (_.has(data1, key) && _.has(data2, key)) {
       if (data1[key] === data2[key]) {
-        acc[`  ${key}`] = data1[key];
+        acc.push(`  ${key}: ${data1[key]}`);
       } else {
-        acc[`- ${key}`] = data1[key];
-        acc[`+ ${key}`] = data2[key];
+        acc.push(`- ${key}: ${data1[key]}`);
+        acc.push(`+ ${key}: ${data2[key]}`);
       }
     } else if (_.has(data1, key) && !_.has(data2, key)) {
-      acc[`- ${key}`] = data1[key];
+      acc.push(`- ${key}: ${data1[key]}`);
     } else {
-      acc[`+ ${key}`] = data2[key];
+      acc.push(`+ ${key}: ${data2[key]}`);
     }
 
     return acc;
-  }, {});
+  }, []);
 
-  return distinctions;
+  return `{\n  ${distinctions.join('\n  ')}\n}`;
 };
 
 export default compareData;
