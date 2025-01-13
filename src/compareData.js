@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import _ from 'lodash';
 
 const compareData = (data1, data2) => {
   const data1keys = _.keys(data1);
