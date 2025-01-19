@@ -1,11 +1,14 @@
 import getStylish from './stylish.js';
+import getPlain from './plain.js';
 
 const selectFormat = (data, formatName = 'stylish') => {
   switch (formatName) {
     case 'stylish':
       return getStylish(data);
+    case 'plain':
+      return getPlain(data);
     default:
-      throw new Error('unknown format');
+      throw new Error('Format is not defined');
   }
 };
 
