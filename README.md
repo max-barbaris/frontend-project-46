@@ -4,6 +4,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ba3e303065731aedb1fc/test_coverage)](https://codeclimate.com/github/max-barbaris/frontend-project-46/test_coverage)
 
 Difference Calculator is a program that determines the difference between two data structures. This is a popular task for which there are many online services, for example, http://www.jsondiff.com/. Such a mechanism is used for test output or automatic tracking of changes in configuration files.
+Supports json and yaml extension.
 
 ### Install Difference Calculator
 
@@ -23,13 +24,13 @@ npm link
 
 File comparsion:
 ```
-gendiff <path to file1> <path to file2>
+gendiff -f <format> <path to file1> <path to file2>
 ```
 
-### Comparing two json files
+### Comparing two files stylish formatter
 
-[![asciicast](https://asciinema.org/a/ZXxFLJWoXjjzcc0xQdxtbW327.svg)](https://asciinema.org/a/ZXxFLJWoXjjzcc0xQdxtbW327)
+[![asciicast](https://asciinema.org/a/WHCw22jYGMdq1p0rSgRVvdm9B.svg)](https://asciinema.org/a/WHCw22jYGMdq1p0rSgRVvdm9B)
 
-### Comparing two yaml files
+### Comparing two files plain formatter
 
-[![asciicast](https://asciinema.org/a/Pzz5eAb11r0vIEUnHniRSKmxH.svg)](https://asciinema.org/a/Pzz5eAb11r0vIEUnHniRSKmxH)
+[![asciicast](https://asciinema.org/a/fdQwHrP2485jCjVZgoGIpT8Nx.svg)](https://asciinema.org/a/fdQwHrP2485jCjVZgoGIpT8Nx)
