@@ -34,3 +34,7 @@ gendiff -f <format> <path to file1> <path to file2>
 ### Comparing two files plain formatter
 
 [![asciicast](https://asciinema.org/a/fdQwHrP2485jCjVZgoGIpT8Nx.svg)](https://asciinema.org/a/fdQwHrP2485jCjVZgoGIpT8Nx)
+
+### Comparing two files json formatter
+
+[![asciicast](https://asciinema.org/a/MrtJ281BkhIoREd07xkLW00kX.svg)](https://asciinema.org/a/MrtJ281BkhIoREd07xkLW00kX)
