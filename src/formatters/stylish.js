@@ -25,7 +25,7 @@ const getStylish = (data, replacer = ' ', spaceCount = 4) => {
           case undefined:
             return `${currentIndent}${key}: ${iter(val, depth + 1)}`;
           default:
-            throw new Error('Type is not defined');
+            throw new Error(`Type is not defined - ${val.type}`);
         }
       });
 

@@ -10,7 +10,7 @@ const selectFormat = (data, formatName = 'stylish') => {
     case 'json':
       return JSON.stringify(data);
     default:
-      throw new Error('Format is not defined');
+      throw new Error(`Format is not defined - ${formatName}`);
   }
 };
 

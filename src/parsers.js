@@ -8,7 +8,7 @@ const fileParsing = (data, fileFormat) => {
     case '.yaml':
       return yaml.load(data);
     default:
-      throw new Error('Unknown format');
+      throw new Error(`Format is not defined - ${fileFormat}`);
   }
 };
 

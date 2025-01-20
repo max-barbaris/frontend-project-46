@@ -29,7 +29,7 @@ const getPlain = (data) => {
           case 'added':
             return `Property '${property}' was added with value: ${stringify(val.value)}`;
           default:
-            throw new Error('Type is not defined');
+            throw new Error(`Type is not defined - ${val.type}`);
         }
       })
       .join('\n');
