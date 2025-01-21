@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-test('test stylish format', () => {
+test('stylish format', () => {
   const file1 = getFixturePath('file1.json');
   const file2 = getFixturePath('file2.json');
   const expected = readFile('resultStylish.txt');
@@ -17,7 +17,7 @@ test('test stylish format', () => {
   expect(genDiff(file1, file2)).toEqual(expected);
 });
 
-test('test plain format', () => {
+test('plain format', () => {
   const file1 = getFixturePath('file1.yml');
   const file2 = getFixturePath('file2.yml');
   const expected = readFile('resultPlain.txt');
@@ -25,7 +25,7 @@ test('test plain format', () => {
   expect(genDiff(file1, file2, 'plain')).toEqual(expected);
 });
 
-test('test JSON format', () => {
+test('JSON format', () => {
   const file1 = getFixturePath('file1.json');
   const file2 = getFixturePath('file2.json');
   const expected = readFile('resultJSON.txt');
@@ -33,7 +33,7 @@ test('test JSON format', () => {
   expect(genDiff(file1, file2, 'json')).toEqual(expected);
 });
 
-test('test stylish format with json and yaml extensions', () => {
+test('stylish format with json and yaml extensions', () => {
   const file1 = getFixturePath('file1.json');
   const file2 = getFixturePath('file2.yml');
   const expected = readFile('resultStylish.txt');
