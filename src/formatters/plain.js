@@ -14,22 +14,21 @@ const stringify = (value) => {
 
 const getPlain = (data) => {
   const iter = (currentData, parent) => {
-    const lines = Object
-      .entries(currentData)
-      .filter(([, val]) => val.type !== 'unchanged')
-      .map(([key, val]) => {
-        const property = parent ? `${parent}.${key}` : `${key}`;
-        switch (val.type) {
-          case undefined:
-            return iter(val, property);
+    const lines = currentData
+      .filter((node) => node.type !== 'unchanged')
+      .map((node) => {
+        const property = parent ? `${parent}.${node.key}` : `${node.key}`;
+        switch (node.type) {
+          case 'nested':
+            return iter(node.value, property);
           case 'changed':
-            return `Property '${property}' was updated. From ${stringify(val.oldValue)} to ${stringify(val.newValue)}`;
+            return `Property '${property}' was updated. From ${stringify(node.oldValue)} to ${stringify(node.newValue)}`;
           case 'deleted':
             return `Property '${property}' was removed`;
           case 'added':
-            return `Property '${property}' was added with value: ${stringify(val.value)}`;
+            return `Property '${property}' was added with value: ${stringify(node.value)}`;
           default:
-            throw new Error(`Type is not defined - ${val.type}`);
+            throw new Error(`Type is not defined - ${node.type}`);
         }
       })
       .join('\n');
