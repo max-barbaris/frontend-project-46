@@ -22,7 +22,7 @@ const getPlain = (data) => {
           case 'nested':
             return iter(node.value, property);
           case 'changed':
-            return `Property '${property}' was updated. From ${stringify(node.oldValue)} to ${stringify(node.newValue)}`;
+            return `Property '${property}' was updated. From ${stringify(node.value1)} to ${stringify(node.value2)}`;
           case 'deleted':
             return `Property '${property}' was removed`;
           case 'added':

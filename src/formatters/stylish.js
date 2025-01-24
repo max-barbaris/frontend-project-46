@@ -32,7 +32,7 @@ const getStylish = (data) => {
           case 'unchanged':
             return `${currentIndent}  ${node.key}: ${stringify(node.value, depth + 1)}`;
           case 'changed':
-            return `${currentIndent}- ${node.key}: ${stringify(node.oldValue, depth + 1)}\n${currentIndent}+ ${node.key}: ${stringify(node.newValue, depth + 1)}`;
+            return `${currentIndent}- ${node.key}: ${stringify(node.value1, depth + 1)}\n${currentIndent}+ ${node.key}: ${stringify(node.value2, depth + 1)}`;
           case 'deleted':
             return `${currentIndent}- ${node.key}: ${stringify(node.value, depth + 1)}`;
           case 'added':
